@@ -4,7 +4,7 @@ class Movie{
     // es6的写法node 可以默认支持一部分
     // https://node.green/
     // https://yq.aliyun.com/articles/665147
-    static CHILDRENS = 2;
+    // static CHILDRENS = 2;
 
     constructor(movieId, title, type){
         this.movieId = movieId;

@@ -1,4 +1,5 @@
 const rental = require('./Rental');
+const movie = require('./Movie');
 
 class Customer{
     constructor(name){
@@ -16,6 +17,39 @@ class Customer{
 
     statement(){
       console.log('statement...');
+      let totalAmount = 0, frequentRenterPoints = 0, result = 'Rental Record for ' + this.name + "\n";
+      const rentals = this.rentals;
+      for(let movieId in rentals){
+          const each = rentals[movieId];
+          let thisAmount = 0;
+        //   console.log(each);
+
+          switch(each.movie.type){
+              case movie.REGULAR:
+              thisAmount += 2;
+              if(each.days > 2)thisAmount += (each.days -2)*1.5;
+              break;
+              case movie.NEW_RELEASE:
+              thisAmount += each.days * 3;
+              break;
+              case movie.CHILDRENS:
+              thisAmount += 1.5;
+              if(each.days > 3)thisAmount += (each.days -3)*1.5;
+              break;
+          }
+
+        //   console.log(thisAmount);
+        frequentRenterPoints ++;
+        if(each.movie.type == movie.NEW_RELEASE && each.days > 1)frequentRenterPoints++;
+        
+        result += "\t" + each.movie.title +"\t" + thisAmount + "\n";
+        totalAmount += thisAmount;
+      }
+      result += "Amount owed is " + totalAmount + "\n";
+      result += "Total Points is " + frequentRenterPoints +"\n";
+
+      return result;
+
     }
 }
 
