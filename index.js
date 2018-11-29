@@ -11,7 +11,7 @@ c1.addRental(2, m0);
 c1.addRental(1, m2);
 c1.addRental(5, m1);
 
-// console.log(c1);
+console.log(c1.statement);
 
 const result = c1.statement();
 console.log(result);

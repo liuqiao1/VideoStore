@@ -8,7 +8,7 @@ class Customer{
     }
 
     addRental(days, movie){
-        if(!this.rentals[movie.movieId])this.rentals[movie.movieId] = {days, movie};
+        if(!this.rentals[movie.movieId])this.rentals[movie.movieId] = new rental(days, movie);
     }
 
     removeRental(movieId){
@@ -21,9 +21,9 @@ class Customer{
       const rentals = this.rentals;
       for(let movieId in rentals){
           const each = rentals[movieId];
-        //   console.log(each);
+        //   console.log('each=====', each.amountFor);
 
-          const thisAmount = this.amountFor(each);
+          const thisAmount = each.amountFor();
 
         //   console.log(thisAmount);
         frequentRenterPoints ++;
@@ -39,26 +39,7 @@ class Customer{
 
     }
 
-    amountFor(each) {
-        let thisAmount = 0;
-
-        switch (each.movie.type) {
-            case movie.REGULAR:
-                thisAmount += 2;
-                if (each.days > 2)
-                    thisAmount += (each.days - 2) * 1.5;
-                break;
-            case movie.NEW_RELEASE:
-                thisAmount += each.days * 3;
-                break;
-            case movie.CHILDRENS:
-                thisAmount += 1.5;
-                if (each.days > 3)
-                    thisAmount += (each.days - 3) * 1.5;
-                break;
-        }
-        return thisAmount;
-    }
+    
 }
 
 module.exports = Customer;
