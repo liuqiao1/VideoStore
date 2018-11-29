@@ -22,15 +22,11 @@ class Customer{
       for(let movieId in rentals){
           const each = rentals[movieId];
         //   console.log('each=====', each.amountFor);
-
-          const thisAmount = each.amountFor();
-
-        //   console.log(thisAmount);
         frequentRenterPoints ++;
         if(each.movie.type == movie.NEW_RELEASE && each.days > 1)frequentRenterPoints++;
         
-        result += "\t" + each.movie.title +"\t" + thisAmount + "\n";
-        totalAmount += thisAmount;
+        result += "\t" + each.movie.title +"\t" + each.amountFor() + "\n";
+        totalAmount += each.amountFor();
       }
       result += "Amount owed is " + totalAmount + "\n";
       result += "Total Points is " + frequentRenterPoints +"\n";
