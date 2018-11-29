@@ -21,22 +21,9 @@ class Customer{
       const rentals = this.rentals;
       for(let movieId in rentals){
           const each = rentals[movieId];
-          let thisAmount = 0;
         //   console.log(each);
 
-          switch(each.movie.type){
-              case movie.REGULAR:
-              thisAmount += 2;
-              if(each.days > 2)thisAmount += (each.days -2)*1.5;
-              break;
-              case movie.NEW_RELEASE:
-              thisAmount += each.days * 3;
-              break;
-              case movie.CHILDRENS:
-              thisAmount += 1.5;
-              if(each.days > 3)thisAmount += (each.days -3)*1.5;
-              break;
-          }
+          const thisAmount = this.amountFor(each);
 
         //   console.log(thisAmount);
         frequentRenterPoints ++;
@@ -50,6 +37,27 @@ class Customer{
 
       return result;
 
+    }
+
+    amountFor(each) {
+        let thisAmount = 0;
+
+        switch (each.movie.type) {
+            case movie.REGULAR:
+                thisAmount += 2;
+                if (each.days > 2)
+                    thisAmount += (each.days - 2) * 1.5;
+                break;
+            case movie.NEW_RELEASE:
+                thisAmount += each.days * 3;
+                break;
+            case movie.CHILDRENS:
+                thisAmount += 1.5;
+                if (each.days > 3)
+                    thisAmount += (each.days - 3) * 1.5;
+                break;
+        }
+        return thisAmount;
     }
 }
 
