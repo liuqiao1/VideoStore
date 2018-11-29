@@ -17,22 +17,34 @@ class Customer{
 
     statement(){
       console.log('statement...');
-      let totalAmount = 0, frequentRenterPoints = 0, result = 'Rental Record for ' + this.name + "\n";
+      let result = 'Rental Record for ' + this.name + "\n";
       const rentals = this.rentals;
       for(let movieId in rentals){
-          const each = rentals[movieId];
-        //   console.log('each=====', each.amountFor);
-        frequentRenterPoints += each.getFrequentPoints();
-        // console.log(frequentRenterPoints);
-        
-        result += "\t" + each.movie.title +"\t" + each.amountFor() + "\n";
-        totalAmount += each.amountFor();
+          const each = rentals[movieId];        
+          result += "\t" + each.movie.title +"\t" + each.amountFor() + "\n";
       }
-      result += "Amount owed is " + totalAmount + "\n";
-      result += "Total Points is " + frequentRenterPoints +"\n";
+      result += "Amount owed is " + this.getTotalAmount() + "\n";
+      result += "Total Points is " + this.getTotalFrequentPoints() +"\n";
 
       return result;
+    }
 
+    getTotalAmount(){
+        let totalAmount = 0;
+        for(let movieId in this.rentals){
+            const each = this.rentals[movieId];
+            totalAmount += each.amountFor();
+        }
+        return totalAmount;
+    }
+
+    getTotalFrequentPoints(){
+        let frequentRenterPoints = 0;
+        for(let movieId in this.rentals){
+            const each = this.rentals[movieId];
+            frequentRenterPoints += each.getFrequentPoints();
+        }
+        return frequentRenterPoints;
     }
 }
 
