@@ -25,6 +25,11 @@ class Rental{
         }
         return result;
     }
+
+    getFrequentPoints() {
+        if (this.movie.type == movie.NEW_RELEASE && this.days > 1)return 2;
+        return 1;
+    }
 }
 
 module.exports = Rental;

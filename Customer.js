@@ -22,8 +22,8 @@ class Customer{
       for(let movieId in rentals){
           const each = rentals[movieId];
         //   console.log('each=====', each.amountFor);
-        frequentRenterPoints ++;
-        if(each.movie.type == movie.NEW_RELEASE && each.days > 1)frequentRenterPoints++;
+        frequentRenterPoints += each.getFrequentPoints();
+        // console.log(frequentRenterPoints);
         
         result += "\t" + each.movie.title +"\t" + each.amountFor() + "\n";
         totalAmount += each.amountFor();
@@ -34,8 +34,6 @@ class Customer{
       return result;
 
     }
-
-    
 }
 
 module.exports = Customer;
