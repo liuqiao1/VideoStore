@@ -1,5 +1,5 @@
 const rental = require('./Rental');
-const movie = require('./Movie');
+const {Movie} = require('./Movie');
 
 class Customer{
     constructor(name){

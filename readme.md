@@ -17,3 +17,6 @@ VS code 选中需要提取的代码，右键，refactor, exact method...可以�
 1. 使用const来测验某个变量是否只被赋值一次
 2. =后边内容提到一个独立的查询函数
 3. 使用查询函数调用换掉临时变量引用
+
+- node 对于es6语法的支持 node.green
+- es6 class setter&getter

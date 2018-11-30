@@ -1,4 +1,4 @@
-const movie = require('./Movie');
+const {Movie} = require('./Movie');
 class Rental{
     constructor(days, movie){
         this.days = days;
