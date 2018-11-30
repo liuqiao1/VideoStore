@@ -5,30 +5,12 @@ class Rental{
         this.movie = movie;
     }
 
-    amountFor() {
-        let result = 0;
-
-        switch (this.movie.type) {
-            case movie.REGULAR:
-                result += 2;
-                if (this.days > 2)
-                    result += (this.days - 2) * 1.5;
-                break;
-            case movie.NEW_RELEASE:
-                result += this.days * 3;
-                break;
-            case movie.CHILDRENS:
-                result += 1.5;
-                if (this.days > 3)
-                    result += (this.days - 3) * 1.5;
-                break;
-        }
-        return result;
+    getCharge(){
+        return this.movie.amountFor(this.days);
     }
 
     getFrequentPoints() {
-        if (this.movie.type == movie.NEW_RELEASE && this.days > 1)return 2;
-        return 1;
+        return this.movie.getFrequentPoints(this.days);
     }
 }
 

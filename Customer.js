@@ -21,7 +21,7 @@ class Customer{
       const rentals = this.rentals;
       for(let movieId in rentals){
           const each = rentals[movieId];        
-          result += "\t" + each.movie.title +"\t" + each.amountFor() + "\n";
+          result += "\t" + each.movie.title +"\t" + each.getCharge() + "\n";
       }
       result += "Amount owed is " + this.getTotalAmount() + "\n";
       result += "Total Points is " + this.getTotalFrequentPoints() +"\n";
@@ -33,7 +33,7 @@ class Customer{
         let totalAmount = 0;
         for(let movieId in this.rentals){
             const each = this.rentals[movieId];
-            totalAmount += each.amountFor();
+            totalAmount += each.getCharge();
         }
         return totalAmount;
     }

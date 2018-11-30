@@ -11,6 +11,32 @@ class Movie{
         this.title = title;
         this.type = type;
     }
+
+    amountFor(days) {
+        let result = 0;
+
+        switch (this.type) {
+            case Movie.REGULAR:
+                result += 2;
+                if (days > 2)
+                    result += (days - 2) * 1.5;
+                break;
+            case Movie.NEW_RELEASE:
+                result += days * 3;
+                break;
+            case Movie.CHILDRENS:
+                result += 1.5;
+                if (days > 3)
+                    result += (days - 3) * 1.5;
+                break;
+        }
+        return result;
+    }
+
+    getFrequentPoints(days) {
+        if (this.type == Movie.NEW_RELEASE && days > 1)return 2;
+        return 1;
+    }
 }
 
 Movie.CHILDRENS = 2;
