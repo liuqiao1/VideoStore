@@ -43,3 +43,60 @@ Chapter 6 重新组织函数
 - 找过于复杂的表达式，拆到变量里或者提到新的小函数里，一步一步走
 - 看这个函数的实现方式是否不合理，有没有一种更加简洁合理的实现方式，如果有，直接按照更好的算法重写
 
+
+1. 基础三剑客
+- HTML
+    * W3C走一遍[w3c](http://www.w3school.com/)
+- CSS
+    * 《CSS权威指南》（不建议一开始就通篇系统性地看看完；建议了解完基本套路，仿写几个页面，哪里不会查哪里）
+- JAVASCRIPT
+    * 《Javascript权威指南》（强推，堪称经典，建议仔细看完，把书上的例子敲完）
+- HTTP
+    * 《图解HTTP》
+
+2. 进阶
+- HTML5&CSS3
+    * 权威指南（同上CSS权威指南建议）
+    * 张鑫旭 https://www.zhangxinxu.com/
+- JS黑科技
+    * 《你不知道的Jabascript》（上中下共三卷）
+- ES新款
+    * 《阮一峰ES6入门》（最经典，写的相当好）
+- 模式
+    * 基本的面向对象设计模式 https://blog.csdn.net/lovelion
+    * 《Javascript设计模式开发与实践》
+    * React模式（可用来面试装逼）
+- 重构
+    * 《重构--改善代码既有设计》（面试应该不会问，但是对于工作很有用，是师兄强推给我的）
+
+3. 框架
+- React
+    * 官网 https://reactjs.org/
+    React生态，比如Redux，React－router等，可直接上官网看
+- Node相关（一般公司会要求懂一门后台语言，JAVA之类的也可以，不过会NODE会很加分）
+    * 官网 https://nodejs.org/en/
+    * EGG https://eggjs.org/zh-cn/
+    《深入浅出NodeJS 》
+
+4. 工程化
+- 模块化编程（上网找博客看，理解模块化编程的思想，以及模块规范）
+- NPM
+- Git
+- Webpack等类似打包工具（会用，知道一点工作原理）
+
+6. 资讯与手册
+- Mozzila，非常强推，标准手册
+- 掘金
+- 知乎
+- 谷歌web developer
+- Twitter，平常遇到的一些书的作者，社区活跃的人，follow他们
+- 你所学技术的官方网站社区
+- GitHub
+－　牛客网，找面试题
+
+7. 资料分享
+以上提到的资料资料包里不一定有，上网找一般都有免费下载的。
+    链接：https://pan.baidu.com/s/1Xdla1otQF10fFS783TT5kA 
+提取码：lz5y 
+复制这段内容后打开百度网盘手机App，操作更方便哦
+    
